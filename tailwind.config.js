@@ -14,6 +14,9 @@ module.exports = {
       animation: {
         skscaleout: "skscaleout 1s infinite ease-in-out",
       },
+      fontFamily: {
+        body: ["poppins", "Helvetica", "sans-serif"]
+      },
     },
   },
   plugins: [],
