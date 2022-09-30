@@ -8,6 +8,6 @@ import { PreloaderComponent } from './preloader/preloader.component';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, PreloaderComponent],
   imports: [CommonModule, BrowserAnimationsModule],
-  exports: [HeaderComponent, FooterComponent, PreloaderComponent],
+  exports: [HeaderComponent, FooterComponent, PreloaderComponent]
 })
 export class SharedModule {}
