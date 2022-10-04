@@ -29,7 +29,9 @@
               "node_modules/@mdi/font/css/materialdesignicons.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/wowjs/dist/wow.js"
+            ]
           },
           "configurations": {
             "production": {

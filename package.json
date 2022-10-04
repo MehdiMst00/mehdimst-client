@@ -1,6 +1,6 @@
 {
   "name": "mehdimst-angular",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,6 +21,7 @@
     "@mdi/font": "^7.0.96",
     "animate.css": "^4.1.1",
     "ngx-owl-carousel-o": "^14.0.1",
+    "ngx-wow": "^2.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

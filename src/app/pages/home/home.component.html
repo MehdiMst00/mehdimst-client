@@ -1,3 +1,29 @@
-<div class="bg-[#222] md:max-w-[calc(100%-380px)] w-full h-[100vh] right-0 absolute">
-  <h1 class="text-5xl text-center text-[#f5f5f5]">Hello World</h1>
+<div
+  class="bg-[#222] md:max-w-[calc(100%-380px)] w-full h-[100vh] right-0 absolute flex justify-center justify-items-center"
+>
+  <div class="block w-full relative">
+    <div class="mt-72 mb-10 text-center">
+      <h1
+        class="inline-block sm:text-[140px] text-5xl text-[#f5f5f5]"
+      >
+        <span class="inline-block animate__animated animate__backInLeft animate__delay-2s animate__slow">Mohammad</span><div class="animate__animated mehdiBackInDown animate__delay-3s animate__slow inline-block text-6xl">Mehdi</div><div class="animate__animated animate__backInUp animate__delay-4s animate__slow block text-6xl ml-96">Mostatabi</div>
+      </h1>
+    </div>
+
+    <owl-carousel-o
+      [options]="customOptions"
+      class="text-[#f5f5f5] text-center"
+    >
+      <ng-template carouselSlide>
+        <div class="text-[#aaa] text-5xl text-center font-light">
+          Fullstack Developer
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="text-[#aaa] text-5xl text-center font-light">
+          More than 2 years experience
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
 </div>
