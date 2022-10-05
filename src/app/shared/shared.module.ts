@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,7 +9,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, PreloaderComponent],
-  imports: [CommonModule, BrowserAnimationsModule, CarouselModule],
+  imports: [CommonModule, BrowserAnimationsModule, CarouselModule, AppRoutingModule],
   exports: [
     HeaderComponent,
     FooterComponent,

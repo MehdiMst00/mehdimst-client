@@ -19,10 +19,12 @@
   </div>
 
   <ul class="mt-[15px] mx-0">
-    <li class="active">
+    <li>
       <a
-        href="#home"
-        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-100 active hover:text-[#09c] transition-all ease-in-out duration-300"
+        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 hover:text-[#09c] transition-all ease-in-out duration-300"
+        [routerLink]="'/'"
+        routerLinkActive="!opacity-100"
+        [routerLinkActiveOptions]="{ exact: true }"
       >
         <span class="mdi mdi-home-outline mr-1"></span>
         <span>Home</span>
@@ -30,8 +32,9 @@
     </li>
     <li>
       <a
-        href="#about-me"
-        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
+        [routerLink]="'/about-me'"
+        routerLinkActive="!opacity-100"
+        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 hover:text-[#09c] transition-all ease-in-out duration-300"
       >
         <span class="mdi mdi-account-outline mr-1"></span>
         <span>About Me</span>

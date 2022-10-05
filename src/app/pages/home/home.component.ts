@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component';
 
 @Component({
   selector: 'app-home',
@@ -30,6 +31,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   ],
 })
 export class HomeComponent implements OnInit {
+  public hide: boolean;
+
   public customOptions: OwlOptions = {
     loop: true,
     autoplay: true,
@@ -44,14 +47,7 @@ export class HomeComponent implements OnInit {
     animateOut: 'animate__animated animate__fadeOut',
   };
 
-  constructor() {}
-
   ngOnInit(): void {
-    // const backInDownElement: HTMLElement =
-    //   document.getElementById('backInUpElement');
-    // setTimeout(() => {
-    //   backInDownElement.style.animationName = 'backInUpElement';
-    //   backInDownElement.style.transform = '';
-    // }, 5000);
+    this.hide = PreloaderComponent.flag;
   }
 }

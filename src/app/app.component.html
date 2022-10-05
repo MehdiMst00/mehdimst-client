@@ -1,6 +1,12 @@
 <app-preloader></app-preloader>
 <div class="relative min-h-[80vh] w-full">
   <app-header></app-header>
-  <router-outlet></router-outlet>
+  <div
+    class="bg-[#222] md:max-w-[calc(100%-380px)] w-full h-[100vh] right-0 absolute flex justify-center justify-items-center"
+  >
+    <div class="block w-full relative">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
   <app-footer></app-footer>
 </div>

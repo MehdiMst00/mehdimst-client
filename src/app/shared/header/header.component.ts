@@ -8,17 +8,17 @@ export class HeaderComponent implements OnInit {
   public toggle: boolean = false;
 
   ngOnInit(): void {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 910) {
       this.toggle = true;
     }
   }
 
   isMedium(): boolean {
-    return window.innerWidth <= 768;
+    return window.innerWidth <= 910;
   }
 
   onToggleClick(): void {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 910) {
       this.toggle = !this.toggle;
     }
   }
