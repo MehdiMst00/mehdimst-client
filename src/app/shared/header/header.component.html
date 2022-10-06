@@ -1,5 +1,5 @@
 <header
-  class="bg-[#444] md:relative md:translate-x-0 fixed md:inline-block z-40 left-0 md:float-left float-none w-full md:max-w-[380px] max-w-none h-[100vh] text-center overflow-auto pt-[50px] px-[30px] pb-[45px] opacity-100 visible transition-all ease-in-out duration-[250ms]"
+  class="bg-[#444] md:relative md:translate-x-0 fixed md:inline-block z-40 left-0 md:float-left float-none w-full md:max-w-[380px] max-w-none h-[100vh] text-center overflow-y-auto overflow-x-hidden pt-[50px] px-[30px] pb-[45px] opacity-100 visible transition-all ease-in-out duration-[250ms]"
   [ngClass]="{ 'translate-x-full': !toggle && isMedium }"
 >
   <div class="header-content">
@@ -120,7 +120,7 @@
   </div>
 
   <div
-    class="md:absolute md:w-[380px] md:bottom-3 bottom-0 relative w-full left-0 pt-[5px] px-[10px] text-center mt-[45px] text-[#bbb]"
+    class="relative w-full pt-[5px] px-[10px] text-center mt-[45px] text-[#bbb]"
   >
     © 2022 All rights reserved.
   </div>
