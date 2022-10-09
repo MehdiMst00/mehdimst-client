@@ -4,8 +4,17 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'about-me', component: AboutMeComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
+    data: { animationState: 'HomePage' },
+  },
+  {
+    path: 'about-me',
+    component: AboutMeComponent,
+    data: { animationState: 'AboutMePage' },
+  },
 ];
 
 @NgModule({

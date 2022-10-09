@@ -25,6 +25,7 @@
         [routerLink]="'/'"
         routerLinkActive="!opacity-100"
         [routerLinkActiveOptions]="{ exact: true }"
+        (click)="onToggleClick()"
       >
         <span class="mdi mdi-home-outline mr-1"></span>
         <span>Home</span>
@@ -35,6 +36,7 @@
         [routerLink]="'/about-me'"
         routerLinkActive="!opacity-100"
         class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 hover:text-[#09c] transition-all ease-in-out duration-300"
+        (click)="onToggleClick()"
       >
         <span class="mdi mdi-account-outline mr-1"></span>
         <span>About Me</span>

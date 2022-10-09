@@ -4,8 +4,11 @@
   <div
     class="bg-[#222] md:max-w-[calc(100%-380px)] w-full h-[100vh] right-0 absolute flex justify-center justify-items-center"
   >
-    <div class="block w-full relative">
-      <router-outlet></router-outlet>
+    <div
+      class="block w-full relative"
+      [@routeAnimations]="prepareRoute(outlet)"
+    >
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </div>
   <app-footer></app-footer>

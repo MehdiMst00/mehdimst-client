@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onToggleClick(): void {
-    if (window.innerWidth <= 910) {
+    if (this.isMedium()) {
       this.toggle = !this.toggle;
     }
   }
