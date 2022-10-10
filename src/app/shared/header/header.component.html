@@ -45,8 +45,10 @@
     </li>
     <li>
       <a
-        href="#resume"
+        [routerLink]="'/resume'"
+        routerLinkActive="!opacity-100"
         class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
+        (click)="onToggleClick()"
       >
         <span class="mdi mdi-school-outline mr-1"></span>
         <span>Resume</span>
@@ -54,8 +56,10 @@
     </li>
     <li>
       <a
-        href="#portfolio"
+        [routerLink]="'/portfolio'"
+        routerLinkActive="!opacity-100"
         class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
+        (click)="onToggleClick()"
       >
         <span class="mdi mdi-briefcase-outline mr-1"></span>
         <span>Portfolio</span>
@@ -63,8 +67,10 @@
     </li>
     <li>
       <a
-        href="#contact"
+        [routerLink]="'/contact'"
+        routerLinkActive="!opacity-100"
         class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
+        (click)="onToggleClick()"
       >
         <span class="mdi mdi-email-outline mr-1"></span>
         <span>Contact</span>
