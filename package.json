@@ -22,6 +22,7 @@
     "animate.css": "^4.1.1",
     "ngx-owl-carousel-o": "^14.0.1",
     "ngx-wow": "^2.0.1",
+    "perfect-scrollbar": "^1.5.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
