@@ -1,1 +1,139 @@
-<p class="text-white text-center text-7xl">about-me works!</p>
+<section
+  class="absolute bg-[#222] text-[#d5d5d5] w-full h-full p-16 overflow-y-auto overflow-x-hidden font-body animate__animated animate__fadeIn {{
+    !hide ? 'animate__delay-2s' : 'animate__delay-1s'
+  }}"
+>
+  <div class="inline-block relative pr-6 pb-2 mb-6">
+    <h2
+      class="relative text-4xl z-10 text-[#eee] font-semibold after:absolute after:opacity-40 after:top-[20px] after:right-[-25px] after:content-[''] after:h-[30px] after:w-[50px] after:z-0 after:page-title-bg"
+    >
+      About
+      <span class="text-[#04b4e0]">Me</span>
+    </h2>
+  </div>
+
+  <div class="grid sm:grid-cols-3 grid-cols-1 gap-[10px]">
+    <div class="sm:col-span-2 col-span-1">
+      <p>
+        Proin volutpat mauris ac pellentesque pharetra. Suspendisse congue elit
+        vel odio suscipit, sit amet tempor nisl imperdiet. Quisque ex justo,
+        faucibus ut mi in, condimentum finibus dolor. Aliquam vitae hendrerit
+        dolor, eget imperdiet mauris. Maecenas et ante id ipsum condimentum
+        dictum et vel massa. Ut in imperdiet dolor, vel consectetur dui.
+      </p>
+    </div>
+    <div class="col-span-1">
+      <ul>
+        <li>
+          <span class="text-[#04b4e0] mr-[5px] font-semibold">Age</span>
+          <span>18</span>
+        </li>
+        <li>
+          <span class="text-[#04b4e0] mr-[5px] font-semibold">Residence</span>
+          <span>IR</span>
+        </li>
+        <li>
+          <span class="text-[#04b4e0] mr-[5px] font-semibold">Address</span>
+          <span>Iran - Isfahan</span>
+        </li>
+        <li>
+          <span class="text-[#04b4e0] mr-[5px] font-semibold whitespace-nowrap"
+            >e-mail</span
+          >
+          <span
+            ><a
+              class="hover:text-[#09c] transition-all duration-300 overflow-wrap-anywhere"
+              href="mailto:mohammadmehdi.mst@gmail.com"
+              >mohammadmehdi.mst@gmail.com</a
+            ></span
+          >
+        </li>
+        <li>
+          <span class="text-[#04b4e0] mr-[5px] font-semibold">Phone</span>
+          <span>+98 913 425 3094</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="inline-block relative pr-6 pb-4 mb-3 mt-5">
+    <h3
+      class="relative text-2xl z-10 text-[#eee] font-semibold font-body after:absolute after:opacity-40 after:top-[10px] after:right-[-20px] after:content-[''] after:h-[30px] after:w-[50px] after:z-0 after:page-title-bg"
+    >
+      What <span class="text-[#04b4e0]">I Do</span>
+    </h3>
+  </div>
+
+  <div class="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 sm:grid-rows-2 gap-6">
+    <div class="animate__animated animate__bounceInLeft animate__fast {{
+      !hide ? 'animate__delay-2s' : 'animate__delay-1s'
+    }}">
+      <div class="table-cell w-14">
+        <i
+          class="mdi mdi-dot-net relative text-6xl text-[#512bd4] opacity-80"
+        ></i>
+      </div>
+      <div class="text-[#eee]">
+        <h4 class="text-[24px] font-semibold my-[5px]">Web Development</h4>
+        <p class="text-[0.95em]">
+          Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor
+          bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non
+          sodales.
+        </p>
+      </div>
+    </div>
+    <div class="animate__animated animate__bounceInRight animate__fast {{
+      !hide ? 'animate__delay-2s' : 'animate__delay-1s'
+    }}">
+      <div class="table-cell w-14">
+        <i
+          class="mdi mdi-language-html5 relative text-6xl text-[#e34c26] opacity-80"
+        ></i>
+      </div>
+      <div class="text-[#eee]">
+        <h4 class="text-[24px] font-semibold my-[5px]">Web Design</h4>
+        <p class="text-[0.95em]">
+          Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor
+          bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non
+          sodales.
+        </p>
+      </div>
+    </div>
+
+    <div class="animate__animated animate__bounceInLeft animate__fast {{
+      !hide ? 'animate__delay-2s' : 'animate__delay-1s'
+    }}">
+      <div class="table-cell w-14">
+        <i
+          class="mdi mdi-database-outline relative text-6xl text-green-600 opacity-80"
+        ></i>
+      </div>
+      <div class="text-[#eee]">
+        <h4 class="text-[24px] font-semibold my-[5px]">Database Design</h4>
+        <p class="text-[0.95em]">
+          Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor
+          bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non
+          sodales.
+        </p>
+      </div>
+    </div>
+
+    <div class="animate__animated animate__bounceInRight animate__fast {{
+      !hide ? 'animate__delay-2s' : 'animate__delay-1s'
+    }}">
+      <div class="table-cell w-14">
+        <i
+          class="mdi mdi-face-agent relative text-6xl text-teal-400 opacity-80"
+        ></i>
+      </div>
+      <div class="text-[#eee]">
+        <h4 class="text-[24px] font-semibold my-[5px]">Support Site</h4>
+        <p class="text-[0.95em]">
+          Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor
+          bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non
+          sodales.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
