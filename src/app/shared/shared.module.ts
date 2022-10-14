@@ -9,7 +9,12 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, PreloaderComponent],
-  imports: [CommonModule, BrowserAnimationsModule, CarouselModule, AppRoutingModule],
+  imports: [
+    CommonModule,
+    BrowserAnimationsModule,
+    CarouselModule,
+    AppRoutingModule,
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,

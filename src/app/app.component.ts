@@ -17,7 +17,7 @@ import { RouterOutlet } from '@angular/router';
     // Go to down
     trigger('routeAnimations', [
       transition(
-        'HomePage => AboutMePage, HomePage => ResumePage, HomePage => PortfolioPage, HomePage => ContactPage, AboutMePage => ResumePage, AboutMePage => PortfolioPage, AboutMePage => ContactPage, ResumePage => PortfolioPage, ResumePage => ContactPage, PortfolioPage => ContactPage',
+        'PortfolioItemsPage => PortfolioItemsPage, HomePage => AboutMePage, HomePage => ResumePage, HomePage => PortfolioPage, HomePage => ContactPage, AboutMePage => ResumePage, AboutMePage => PortfolioPage, AboutMePage => ContactPage, ResumePage => PortfolioPage, ResumePage => ContactPage, PortfolioPage => ContactPage',
         [
           style({ position: 'relative' }),
           query(':enter, :leave', [
