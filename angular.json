@@ -30,9 +30,7 @@
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/wowjs/dist/wow.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
