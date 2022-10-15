@@ -22,7 +22,7 @@ import { ActivatedRoute, Router } from '@angular/router';
       figure:hover span {
         opacity: 1;
       }
-      figure:hover img {
+      figure:hover div.portfolio-image {
         transform: scale(1.1);
       }
     `,
