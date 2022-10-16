@@ -43,8 +43,9 @@ export class HomeComponent implements OnInit {
     navSpeed: 700,
     items: 1,
     nav: false,
-    animateIn: 'animate__animated animate__fadeIn',
-    animateOut: 'animate__animated animate__fadeOut',
+    animateIn: 'animate__animated animate__fadeIn animate__faster',
+    animateOut: 'animate__animated animate__fadeOut animate__faster',
+    center: true
   };
 
   ngOnInit(): void {

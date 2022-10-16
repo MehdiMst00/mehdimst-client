@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -10,6 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ContactService } from './core/services/contact.service';
+import { PortfolioService } from './core/services/portfolio.service';
+import { PreloaderService } from './core/services/preloader.service';
+import { SkillsService } from './core/services/skills.service';
+import { SiteInterceptor } from './core/utilities/site.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,17 @@ import { ContactComponent } from './pages/contact/contact.component';
     SharedModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    PreloaderService,
+    SkillsService,
+    PortfolioService,
+    ContactService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SiteInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
