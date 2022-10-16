@@ -1,3 +1,5 @@
+import { SkillsService } from './../../core/services/skills.service';
+import { Skill } from './../../core/dtos/skills/skill';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component';
 
@@ -7,10 +9,22 @@ import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component
 })
 export class ResumeComponent implements OnInit, AfterViewInit {
   public hide: boolean;
+  public skills: Skill[] = [];
 
-  constructor() {}
+  constructor(private skillsService: SkillsService) {}
 
   ngOnInit(): void {
+    this.skillsService.getCurrentSkills().subscribe((skills) => {
+      if (skills === null) {
+        this.skillsService.getSkills().subscribe((result) => {
+          this.skillsService.setCurrentSkills(result.skills);
+        });
+      } else {
+        this.skills = skills.sort(
+          (a, b) => a.displayPriority - b.displayPriority
+        );
+      }
+    });
     this.hide = PreloaderComponent.flag;
   }
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -31,6 +31,7 @@ import { SiteInterceptor } from './core/utilities/site.interceptor';
     BrowserAnimationsModule,
     SharedModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     PreloaderService,

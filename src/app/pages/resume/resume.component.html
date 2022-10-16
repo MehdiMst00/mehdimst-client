@@ -4,207 +4,34 @@
   }}"
 >
   <div class="inline-block relative pr-6 pb-2 mb-6">
-    <h2 class="relative text-4xl z-10 text-[#eee] font-semibold after:absolute after:opacity-40 after:top-[20px] after:right-[-25px] after:content-[''] after:h-[30px] after:w-[50px] after:z-0 after:page-title-bg">
+    <h2
+      class="relative text-4xl z-10 text-[#eee] font-semibold after:absolute after:opacity-40 after:top-[20px] after:right-[-25px] after:content-[''] after:h-[30px] after:w-[50px] after:z-0 after:page-title-bg"
+    >
       Resume
     </h2>
   </div>
-  <div class="grid sm:grid-cols-2 grid-cols-1 gap-x-4">
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
+  <div
+    class="grid sm:grid-cols-2 grid-cols-1 gap-x-4"
+    *ngIf="this.skills !== null && this.skills.length > 0"
+  >
+    <div class="relative" *ngFor="let skill of this.skills">
+      <h4
+        class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase"
+      >
+        {{ skill.title }} -
       </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
+      <div
+        class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block"
+      >
+        {{ skill.value }}%
       </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
-      </div>
-    </div>
-    <div class="relative">
-      <h4 class="text-[20px] text-[#eee] leading-[1.1em] mb-[4px] mr-[3px] inline-block uppercase">
-        C# -
-      </h4>
-      <div class="text-[16px] text-[#aaa] leading-[1.1em] mb-[4px] inline-block">
-        95%
-      </div>
-      <div class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full">
-        <div class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000" data-progress="95"></div>
+      <div
+        class="relative inline-block bg-[#222] border-[1px] border-[#04b4e0] border-solid rounded-lg box-border h-[14.5px] mb-4 w-full"
+      >
+        <div
+          [attr.data-progress]="skill.value"
+          class="animated-progress bg-[#04b4e0] border-[2px] border-[#222] border-solid rounded-[9px] h-[12px] p-0 w-0 transition-all duration-1000"
+        ></div>
       </div>
     </div>
   </div>
