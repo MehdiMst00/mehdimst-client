@@ -16,6 +16,7 @@ import { PortfolioService } from './core/services/portfolio.service';
 import { PreloaderService } from './core/services/preloader.service';
 import { SkillsService } from './core/services/skills.service';
 import { SiteInterceptor } from './core/utilities/site.interceptor';
+import { PortfolioItemsComponent } from './pages/portfolio/portfolio-items/portfolio-items.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SiteInterceptor } from './core/utilities/site.interceptor';
     AboutMeComponent,
     ResumeComponent,
     PortfolioComponent,
+    PortfolioItemsComponent,
     ContactComponent,
   ],
   imports: [

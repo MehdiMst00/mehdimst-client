@@ -26,15 +26,7 @@ const routes: Routes = [
   {
     path: 'portfolio',
     component: PortfolioComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import(
-            './pages/portfolio/portfolio-items/portfolio-items.module'
-          ).then((m) => m.PortfolioItemsModule),
-      },
-    ],
+    pathMatch: 'full',
     data: { animationState: 'PortfolioPage' },
   },
   {

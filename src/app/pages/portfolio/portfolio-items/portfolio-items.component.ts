@@ -1,6 +1,8 @@
+import { Portfolio } from './../../../core/dtos/portfolios/portfolio';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PortfolioService } from 'src/app/core/services/portfolio.service';
 
 @Component({
   selector: 'app-portfolio-items',
@@ -9,11 +11,17 @@ import { ActivatedRoute, Router } from '@angular/router';
     trigger('fadeInOutAnimation', [
       transition(':enter', [
         style({ opacity: 0, visibility: 'hidden' }),
-        animate('300ms ease-out', style({ opacity: 1, visibility: 'visible' })),
+        animate(
+          '300ms ease-in-out',
+          style({ opacity: 1, visibility: 'visible' })
+        ),
       ]),
       transition(':leave', [
         style({ opacity: 1, visibility: 'visible' }),
-        animate('300ms ease-in', style({ opacity: 0, visibility: 'hidden' })),
+        animate(
+          '300ms ease-in-out',
+          style({ opacity: 0, visibility: 'hidden' })
+        ),
       ]),
     ]),
   ],
@@ -24,6 +32,7 @@ import { ActivatedRoute, Router } from '@angular/router';
       }
       figure:hover div.portfolio-image {
         transform: scale(1.1);
+        border-radius: 0.5rem;
       }
     `,
   ],
@@ -31,8 +40,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PortfolioItemsComponent implements OnInit {
   public category: string;
   public loadedData: boolean = false;
+  public portfolios: Portfolio[] = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private portfolioService: PortfolioService
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe((params) => {
@@ -40,15 +54,16 @@ export class PortfolioItemsComponent implements OnInit {
 
       this.category = params.get('category') || '';
       if (this.category == '')
-        this.router.navigate(['portfolio'], {
-          queryParams: { category: 'all' },
-        });
+        this.router.navigate(['portfolio'], { queryParams: { category: '' } });
 
-      // TODO: Get data from rest api
       setTimeout(() => {
-        console.log('Call Server In Portfolio');
+        this.portfolioService
+          .getPortfolios(this.category)
+          .subscribe((result) => {
+            this.portfolios = result.portfolios;
+          });
         this.loadedData = true;
-      }, 1000);
+      }, 500);
     });
   }
 }
