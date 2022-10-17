@@ -14,19 +14,19 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-[10px] mt-5">
     <div
-    class="relative text-center overflow-hidden py-[20px] px-[10px] bg-[#333] shadow-none border-solid border-[1px] border-[#444] rounded-lg transition-all duration-500 ease-in-out hover:-translate-y-3"
-  >
-    <i
-      class="mdi mdi-email-outline relative text-[33px] text-[#04b4e0] z-10"
-    ></i>
-    <h4 class="overflow-auto">
-      <a
-        class="hover:text-[#09c] transition-all duration-300"
-        href="mailto:mohammadmehdi.mst@gmail.com"
-        >mohammadmehdi.mst@gmail.com</a
-      >
-    </h4>
-  </div>
+      class="relative text-center overflow-hidden py-[20px] px-[10px] bg-[#333] shadow-none border-solid border-[1px] border-[#444] rounded-lg transition-all duration-500 ease-in-out hover:-translate-y-3"
+    >
+      <i
+        class="mdi mdi-email-outline relative text-[33px] text-[#04b4e0] z-10"
+      ></i>
+      <h4 class="overflow-auto">
+        <a
+          class="hover:text-[#09c] transition-all duration-300"
+          href="mailto:mohammadmehdi.mst@gmail.com"
+          >mohammadmehdi.mst@gmail.com</a
+        >
+      </h4>
+    </div>
     <div
       class="relative text-center overflow-hidden py-[20px] px-[10px] bg-[#333] shadow-none border-solid border-[1px] border-[#444] rounded-lg transition-all duration-500 ease-in-out hover:-translate-y-3"
     >
@@ -37,7 +37,11 @@
     </div>
   </div>
 
-  <form autocomplete="off">
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="submitContactForm()"
+    autocomplete="off"
+  >
     <div class="grid grid-cols-1 md:grid-cols-2 gap-[10px] mt-5">
       <div class="relative mb-4">
         <div class="relative">
@@ -45,6 +49,7 @@
             type="text"
             name="fullName"
             id="fullName"
+            formControlName="fullName"
             class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
             placeholder=" "
           />
@@ -64,6 +69,7 @@
             type="email"
             name="email"
             id="email"
+            formControlName="email"
             class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
             placeholder=" "
           />
@@ -83,6 +89,7 @@
             type="text"
             name="subject"
             id="subject"
+            formControlName="subject"
             class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
             placeholder=" "
           />
@@ -102,6 +109,7 @@
             type="text"
             name="message"
             id="message"
+            formControlName="description"
             class="block h-52 px-2.5 pb-2.5 pt-4 pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer overflow-hidden resize-none"
             placeholder=" "
           ></textarea>
@@ -118,7 +126,8 @@
     </div>
     <div class="grid mt-2">
       <button
-        class="relative inline-block pt-[0.7em] pb-[0.6em] px-[2.1em] text-[1em] border-[2px] border-solid outline-none bg-transparent text-[#f5f5f5] border-[#04b4e0] rounded-full transition-all duration-300 ease-in-out hover:bg-[#04b4e0]"
+        [disabled]="contactForm.invalid"
+        class="relative inline-block pt-[0.7em] pb-[0.6em] px-[2.1em] text-[1em] border-[2px] border-solid outline-none bg-transparent text-[#f5f5f5] border-[#04b4e0] rounded-full transition-all duration-300 ease-in-out hover:bg-[#04b4e0] disabled:bg-[#999]"
         type="submit"
       >
         Send message
