@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component';
@@ -33,6 +34,8 @@ import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component
 export class HomeComponent implements OnInit {
   public hide: boolean;
 
+  constructor(private router: Router) {}
+
   public customOptions: OwlOptions = {
     loop: true,
     autoplay: true,
@@ -45,10 +48,17 @@ export class HomeComponent implements OnInit {
     nav: false,
     animateIn: 'animate__animated animate__fadeIn animate__faster',
     animateOut: 'animate__animated animate__fadeOut animate__faster',
-    center: true
+    center: true,
+    autoplayTimeout: 3000,
+    autoWidth: true,
+    smartSpeed: 450,
   };
 
   ngOnInit(): void {
     this.hide = PreloaderComponent.flag;
+  }
+
+  navigateToAbout() {
+    this.router.navigate(['about-me']);
   }
 }

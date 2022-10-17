@@ -4,18 +4,93 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
+  body {
+    @apply overflow-x-hidden;
+  }
+
   .page-title-bg {
-    background-image: -webkit-repeating-radial-gradient(center center,#04b4e0,#04b4e0 1px,transparent 0px,transparent 100%);
-    background-image: -moz-repeating-radial-gradient(center center,#04b4e0,#04b4e0 1px,transparent 0px,transparent 100%);
-    background-image: -ms-repeating-radial-gradient(center center,#04b4e0,#04b4e0 1px,transparent 0px,transparent 100%);
-    background-image: radial-gradient(center center,#04b4e0,#04b4e0 1px,transparent 0px,transparent 100%);
-    background-image: -webkit-radial-gradient(center center,#04b4e0,#04b4e0 1px,transparent 0px,transparent 100%);
+    background-image: -webkit-repeating-radial-gradient(
+      center center,
+      #04b4e0,
+      #04b4e0 1px,
+      transparent 0px,
+      transparent 100%
+    );
+    background-image: -moz-repeating-radial-gradient(
+      center center,
+      #04b4e0,
+      #04b4e0 1px,
+      transparent 0px,
+      transparent 100%
+    );
+    background-image: -ms-repeating-radial-gradient(
+      center center,
+      #04b4e0,
+      #04b4e0 1px,
+      transparent 0px,
+      transparent 100%
+    );
+    background-image: radial-gradient(
+      center center,
+      #04b4e0,
+      #04b4e0 1px,
+      transparent 0px,
+      transparent 100%
+    );
+    background-image: -webkit-radial-gradient(
+      center center,
+      #04b4e0,
+      #04b4e0 1px,
+      transparent 0px,
+      transparent 100%
+    );
     -webkit-background-size: 6px 6px;
     -moz-background-size: 6px 6px;
     background-size: 6px 6px;
     z-index: 0;
+  }
+
+  .animate__animated.hinge {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+  }
+
+  @-webkit-keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.4, 0.4, 0.4);
+      transform: scale3d(0.4, 0.4, 0.4);
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.4, 0.4, 0.4);
+      transform: scale3d(0.4, 0.4, 0.4);
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
   }
 
   .overflow-wrap-anywhere {

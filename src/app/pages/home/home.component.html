@@ -1,5 +1,5 @@
-<div class="h-[100vh] flex justify-center flex-col">
-  <div class="mb-10 text-center overflow-hidden">
+<div class="h-[100vh] overflow-hidden flex flex-col justify-center py-9">
+  <div class="mb-10 text-center">
     <h1 class="inline-block text-[#f5f5f5]">
       <span
         class="text-[2.8rem] md:text-[5rem] md2:text-[4rem] lg:text-[6rem] xl:text-[8rem] animate__animated animate__backInLeft inline-block {{
@@ -37,4 +37,21 @@
     </ng-template>
   </owl-carousel-o>
 
+  <div
+    class="w-[100px] h-[100px] my-0 mx-auto absolute bottom-[10px] right-0 animate__animated animate__fadeInRight {{
+      !hide ? 'animate__delay-2s' : 'animate__delay-1s'
+    }}"
+    (click)="navigateToAbout()"
+  >
+    <div
+      class="w-[60px] h-[60px] bg-[#04b4e0] rounded-full absolute top-[20px] left-[20px] z-10 table before:w-[56px] before:h-[56px] before:content-[''] before:border-solid before:border-[2px] before:border-[#444] before:rounded-full before:absolute before:top-[2px] before:left-[2px]"
+    >
+      <i
+        class="mdi mdi-arrow-down-drop-circle-outline text-[30px] table-cell align-middle text-center text-[#444]"
+      ></i>
+    </div>
+    <div
+      class="w-[100px] h-[100px] bg-[#04b4e0] opacity-50 rounded-full absolute animate__animated hinge animate__infinite zoomIn"
+    ></div>
+  </div>
 </div>

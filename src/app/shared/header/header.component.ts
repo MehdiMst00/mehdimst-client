@@ -12,7 +12,8 @@ export class HeaderComponent implements OnInit {
     // Initialize the `PerfectScrollbar` plugin
     new PerfectScrollbar(document.getElementById('header'), {
       wheelSpeed: 0.2,
-      wheelPropagation: true,
+      wheelPropagation: false,
+      swipeEasing: true
     });
 
     if (window.innerWidth >= 910) {
