@@ -51,10 +51,15 @@ export class PortfolioItemsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe((params) => {
       this.loadedData = false;
+      this.portfolios = [];
 
       this.category = params.get('category') || '';
       if (this.category == '')
-        this.router.navigate(['portfolio'], { queryParams: { category: '' } });
+        this.router.navigate(['portfolio'], {
+          queryParams: { category: 'all' },
+        });
+
+      if (this.category == 'all') this.category = '';
 
       setTimeout(() => {
         this.portfolioService

@@ -26,7 +26,6 @@ const routes: Routes = [
   {
     path: 'portfolio',
     component: PortfolioComponent,
-    pathMatch: 'full',
     data: { animationState: 'PortfolioPage' },
   },
   {
