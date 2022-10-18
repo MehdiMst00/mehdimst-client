@@ -2,8 +2,8 @@ import { ContactMe } from './../../core/dtos/contacts/contact.me';
 import { ContactService } from './../../core/services/contact.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component';
 import { ToastrService } from 'ngx-toastr';
+import { PreloaderService } from 'src/app/core/services/preloader.service';
 
 @Component({
   selector: 'app-contact',
@@ -15,11 +15,12 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private contactService: ContactService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private preloaderService: PreloaderService
   ) {}
 
   ngOnInit(): void {
-    this.hide = PreloaderComponent.flag;
+    this.hide = this.preloaderService.flag;
     this.contactForm = new FormGroup({
       fullName: new FormControl(null, [
         Validators.required,

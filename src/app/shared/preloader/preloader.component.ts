@@ -1,5 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component } from '@angular/core';
+import { PreloaderService } from 'src/app/core/services/preloader.service';
 
 @Component({
   selector: 'app-preloader',
@@ -15,12 +16,13 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class PreloaderComponent implements AfterViewInit {
   public hide: boolean = false;
-  static flag: boolean = false;
+
+  constructor(private preloaderService: PreloaderService) {}
 
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.hide = true;
-      PreloaderComponent.flag = true;
+      this.preloaderService.flag = true;
     }, 2000);
   }
 }

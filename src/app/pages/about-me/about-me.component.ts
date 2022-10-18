@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component';
+import { PreloaderService } from 'src/app/core/services/preloader.service';
 
 @Component({
   selector: 'app-about-me',
@@ -8,7 +8,9 @@ import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component
 export class AboutMeComponent implements OnInit {
   public hide: boolean;
 
+  constructor(private preloaderService: PreloaderService) {}
+
   ngOnInit(): void {
-    this.hide = PreloaderComponent.flag;
+    this.hide = this.preloaderService.flag;
   }
 }

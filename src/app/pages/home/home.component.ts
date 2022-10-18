@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component';
+import { PreloaderService } from 'src/app/core/services/preloader.service';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +34,10 @@ import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component
 export class HomeComponent implements OnInit {
   public hide: boolean;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private preloaderService: PreloaderService
+  ) {}
 
   public customOptions: OwlOptions = {
     loop: true,
@@ -55,7 +58,7 @@ export class HomeComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.hide = PreloaderComponent.flag;
+    this.hide = this.preloaderService.flag;
   }
 
   navigateToAbout() {

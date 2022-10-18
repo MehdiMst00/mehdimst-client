@@ -1,7 +1,7 @@
 import { SkillsService } from './../../core/services/skills.service';
 import { Skill } from './../../core/dtos/skills/skill';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component';
+import { PreloaderService } from 'src/app/core/services/preloader.service';
 
 @Component({
   selector: 'app-resume',
@@ -11,7 +11,10 @@ export class ResumeComponent implements OnInit, AfterViewInit {
   public hide: boolean;
   public skills: Skill[] = [];
 
-  constructor(private skillsService: SkillsService) {}
+  constructor(
+    private skillsService: SkillsService,
+    private preloaderService: PreloaderService
+  ) {}
 
   ngOnInit(): void {
     this.skillsService.getCurrentSkills().subscribe((skills) => {
@@ -25,7 +28,7 @@ export class ResumeComponent implements OnInit, AfterViewInit {
         );
       }
     });
-    this.hide = PreloaderComponent.flag;
+    this.hide = this.preloaderService.flag;
   }
 
   ngAfterViewInit(): void {
