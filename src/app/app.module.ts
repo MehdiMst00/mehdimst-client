@@ -18,6 +18,7 @@ import { PreloaderService } from './core/services/preloader.service';
 import { SkillsService } from './core/services/skills.service';
 import { SiteInterceptor } from './core/utilities/site.interceptor';
 import { PortfolioItemsComponent } from './pages/portfolio/portfolio-items/portfolio-items.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,13 @@ import { PortfolioItemsComponent } from './pages/portfolio/portfolio-items/portf
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      progressBar: true,
+    }),
   ],
   providers: [
     PreloaderService,

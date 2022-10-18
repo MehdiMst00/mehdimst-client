@@ -21,6 +21,7 @@
     "@mdi/font": "^7.0.96",
     "animate.css": "^4.1.1",
     "ngx-owl-carousel-o": "^14.0.1",
+    "ngx-toastr": "^15.2.1",
     "perfect-scrollbar": "^1.5.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.4.0",

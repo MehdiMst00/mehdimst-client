@@ -3,6 +3,7 @@ import { ContactService } from './../../core/services/contact.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PreloaderComponent } from 'src/app/shared/preloader/preloader.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +13,10 @@ export class ContactComponent implements OnInit {
   public hide: boolean;
   public contactForm: FormGroup;
 
-  constructor(private contactService: ContactService) {}
+  constructor(
+    private contactService: ContactService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.hide = PreloaderComponent.flag;
@@ -49,13 +53,16 @@ export class ContactComponent implements OnInit {
       this.contactService
         .postContactMeMessage(contactMe)
         .subscribe((result) => {
-          if(result) {
-            // Show Notification
+          if (result.success) {
+            this.toastr.success(
+              'Your message successfully sent!',
+              'Success Message'
+            );
+            this.contactForm.reset();
+            return;
           }
-          console.log(result);
-          this.contactForm.reset();
+          this.toastr.error('An error occurred', 'Error Message');
         });
-
     }
   }
 }
