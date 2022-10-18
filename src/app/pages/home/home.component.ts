@@ -28,6 +28,12 @@ import { PreloaderService } from 'src/app/core/services/preloader.service';
       .mehdiBackInDown {
         animation-name: mehdiBackInDown;
       }
+
+      .owl-carousel {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+      }
     `,
   ],
 })
@@ -42,9 +48,9 @@ export class HomeComponent implements OnInit {
   public customOptions: OwlOptions = {
     loop: true,
     autoplay: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
     dots: false,
     navSpeed: 700,
     items: 1,
@@ -53,7 +59,6 @@ export class HomeComponent implements OnInit {
     animateOut: 'animate__animated animate__fadeOut animate__faster',
     center: true,
     autoplayTimeout: 3000,
-    autoWidth: true,
     smartSpeed: 450,
   };
 
