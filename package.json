@@ -18,7 +18,6 @@
     "@angular/platform-browser": "^14.2.6",
     "@angular/platform-browser-dynamic": "^14.2.6",
     "@angular/router": "^14.2.6",
-    "@mdi/font": "^7.0.96",
     "animate.css": "^4.1.1",
     "ngx-owl-carousel-o": "^14.0.1",
     "ngx-toastr": "^15.2.1",
