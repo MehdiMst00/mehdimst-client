@@ -9,8 +9,12 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'home',
     pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
     data: { animationState: 'HomePage' },
   },
   {
@@ -32,6 +36,10 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent,
     data: { animationState: 'ContactPage' },
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
   },
 ];
 

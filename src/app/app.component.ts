@@ -7,8 +7,10 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Location } from '@angular/common';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -71,7 +73,17 @@ import { RouterOutlet } from '@angular/router';
     ]),
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  location: Location;
+
+  ngOnInit() {
+    if (environment.production) {
+      if (location.protocol === 'http:') {
+        window.location.href = location.href.replace('http', 'https');
+      }
+    }
+  }
+
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet &&

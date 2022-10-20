@@ -28,12 +28,6 @@ import { PreloaderService } from 'src/app/core/services/preloader.service';
       .mehdiBackInDown {
         animation-name: mehdiBackInDown;
       }
-
-      .owl-carousel {
-        display: flex !important;
-        flex-direction: row;
-        justify-content: center;
-      }
     `,
   ],
 })
@@ -49,17 +43,20 @@ export class HomeComponent implements OnInit {
     loop: true,
     autoplay: true,
     mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
+    touchDrag: true,
+    pullDrag: true,
     dots: false,
     navSpeed: 700,
+    margin: 0,
+    stagePadding: 0,
     items: 1,
     nav: false,
     animateIn: 'animate__animated animate__fadeIn animate__faster',
     animateOut: 'animate__animated animate__fadeOut animate__faster',
-    center: true,
     autoplayTimeout: 3000,
     smartSpeed: 450,
+    autoWidth: false,
+    autoHeight: false,
   };
 
   ngOnInit(): void {
