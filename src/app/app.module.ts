@@ -31,7 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
     ContactComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     SharedModule,
     AppRoutingModule,

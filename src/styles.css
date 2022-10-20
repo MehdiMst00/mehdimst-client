@@ -197,15 +197,18 @@
   }
 }
 
-.owl-carousel {
-  display: flex;
-  align-items: center;
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
 }
 
-.owl-item {
-  max-width: calc(100% - 380px);
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  display: none;
 }
 
-.owl-item > div {
-  text-align: center !important;
+::-webkit-scrollbar-thumb {
+  background-color: #04b4e0;
+  opacity: 0.7;
+  border-radius: 5px;
 }

@@ -9,13 +9,9 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
-    path: 'home',
     component: HomeComponent,
     data: { animationState: 'HomePage' },
+    pathMatch: 'full',
   },
   {
     path: 'about-me',
@@ -44,7 +40,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { PreloaderService } from 'src/app/core/services/preloader.service';
 
 @Component({
@@ -38,26 +37,6 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private preloaderService: PreloaderService
   ) {}
-
-  public customOptions: OwlOptions = {
-    loop: true,
-    autoplay: true,
-    mouseDrag: false,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 700,
-    margin: 0,
-    stagePadding: 0,
-    items: 1,
-    nav: false,
-    animateIn: 'animate__animated animate__fadeIn animate__faster',
-    animateOut: 'animate__animated animate__fadeOut animate__faster',
-    autoplayTimeout: 3000,
-    smartSpeed: 450,
-    autoWidth: false,
-    autoHeight: false,
-  };
 
   ngOnInit(): void {
     this.hide = this.preloaderService.flag;
