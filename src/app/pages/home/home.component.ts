@@ -1,7 +1,11 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PreloaderService } from 'src/app/core/services/preloader.service';
+// import Swiper core and required modules
+import SwiperCore, { EffectFade, Autoplay } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([EffectFade, Autoplay]);
 
 @Component({
   selector: 'app-home',
@@ -30,6 +34,7 @@ import { PreloaderService } from 'src/app/core/services/preloader.service';
       }
     `,
   ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
   public hide: boolean;
@@ -38,26 +43,6 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private preloaderService: PreloaderService
   ) {}
-
-  public customOptions: OwlOptions = {
-    loop: true,
-    autoplay: true,
-    mouseDrag: false,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 700,
-    margin: 0,
-    stagePadding: 0,
-    items: 1,
-    nav: false,
-    animateIn: 'animate__animated animate__fadeIn animate__faster',
-    animateOut: 'animate__animated animate__fadeOut animate__faster',
-    autoplayTimeout: 3000,
-    smartSpeed: 450,
-    autoWidth: false,
-    autoHeight: false,
-  };
 
   ngOnInit(): void {
     this.hide = this.preloaderService.flag;

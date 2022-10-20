@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import PerfectScrollbar from 'perfect-scrollbar';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,22 +7,20 @@ import PerfectScrollbar from 'perfect-scrollbar';
 })
 export class HeaderComponent implements OnInit {
   public toggle: boolean = false;
+  private window: Window;
+
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    this.window = this.document.defaultView;
+  }
 
   ngOnInit(): void {
-    // Initialize the `PerfectScrollbar` plugin
-    new PerfectScrollbar(document.getElementById('header'), {
-      wheelSpeed: 0.2,
-      wheelPropagation: false,
-      swipeEasing: true
-    });
-
-    if (window.innerWidth >= 910) {
+    if (this.window.innerWidth >= 910) {
       this.toggle = true;
     }
   }
 
   isMedium(): boolean {
-    return window.innerWidth <= 910;
+    return this.window.innerWidth <= 910;
   }
 
   onToggleClick(): void {
