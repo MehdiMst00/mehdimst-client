@@ -1,6 +1,11 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PreloaderService } from 'src/app/core/services/preloader.service';
+// import Swiper core and required modules
+import SwiperCore, { EffectFade, Autoplay } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([EffectFade, Autoplay]);
 
 @Component({
   selector: 'app-home',
@@ -29,6 +34,7 @@ import { PreloaderService } from 'src/app/core/services/preloader.service';
       }
     `,
   ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
   public hide: boolean;

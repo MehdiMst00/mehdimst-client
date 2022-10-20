@@ -1,7 +1,6 @@
 import { ContactComponent } from './pages/contact/contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
@@ -9,9 +8,9 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
     data: { animationState: 'HomePage' },
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   {
     path: 'about-me',
@@ -35,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: '',
   },
 ];
 
