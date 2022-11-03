@@ -3,7 +3,6 @@ import { PortfolioCategory } from './../dtos/portfolios/portfolio.category';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Portfolio } from '../dtos/portfolios/portfolio';
 import { PortfolioListResponse } from '../dtos/portfolios/portfolio.list.response';
 
 @Injectable({

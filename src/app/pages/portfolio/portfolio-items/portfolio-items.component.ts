@@ -68,7 +68,7 @@ export class PortfolioItemsComponent implements OnInit {
             this.portfolios = result.portfolios;
           });
         this.loadedData = true;
-      }, 500);
+      }, 300);
     });
   }
 }

@@ -18,8 +18,10 @@ export class ResumeComponent implements OnInit {
 
   ngOnInit(): void {
     this.hide = this.preloaderService.flag;
+    let delayTime: number = this.hide ? 1000 : 2000;
     this.skillsService.getCurrentSkills().subscribe((skills) => {
       if (skills === null) {
+        delayTime = 0;
         this.skillsService.getSkills().subscribe((result) => {
           this.skillsService.setCurrentSkills(result.skills);
         });
@@ -28,7 +30,6 @@ export class ResumeComponent implements OnInit {
           (a, b) => a.displayPriority - b.displayPriority
         );
       }
-      const delayTime: number = this.hide ? 1000 : 2000;
       setTimeout(() => {
         const allProgress =
           document.getElementsByClassName('animated-progress');

@@ -20,6 +20,8 @@ import { SkillsService } from './core/services/skills.service';
 import { SiteInterceptor } from './core/utilities/site.interceptor';
 import { PortfolioItemsComponent } from './pages/portfolio/portfolio-items/portfolio-items.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,12 @@ import { ToastrModule } from 'ngx-toastr';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
       progressBar: true,
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     })
   ],
   providers: [
