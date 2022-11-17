@@ -1,6 +1,6 @@
 import { SkillsService } from './../../core/services/skills.service';
 import { Skill } from './../../core/dtos/skills/skill';
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PreloaderService } from 'src/app/core/services/preloader.service';
 
 @Component({
@@ -21,15 +21,14 @@ export class ResumeComponent implements OnInit {
     let delayTime: number = this.hide ? 1000 : 2000;
     this.skillsService.getCurrentSkills().subscribe((skills) => {
       if (skills === null) {
-        delayTime = 0;
+        delayTime = 1;
         this.skillsService.getSkills().subscribe((result) => {
           this.skillsService.setCurrentSkills(result.skills);
         });
       } else {
-        this.skills = skills.sort(
-          (a, b) => a.displayPriority - b.displayPriority
-        );
+        this.skills = skills;
       }
+
       setTimeout(() => {
         const allProgress =
           document.getElementsByClassName('animated-progress');
