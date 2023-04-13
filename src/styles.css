@@ -223,3 +223,50 @@
   text-align: center;
   line-height: 300px;
 }
+
+div.hamburg {
+  background: #04b4e0;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 9999;
+  border-radius: 9999px;
+  top: 12px;
+  right: 12px;
+}
+
+.line {
+  position: absolute;
+  left: 14px;
+  height: 4px;
+  width: 31px;
+  background: #fff;
+  border-radius: 2px;
+  display: block;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.line:nth-child(1) {
+  top: 16px;
+}
+.line:nth-child(2) {
+  top: 28px;
+}
+.line:nth-child(3) {
+  top: 40px;
+}
+
+.hamburg-line-1-checked {
+  transform: translateY(12px) rotate(-45deg);
+}
+
+.hamburg-line-2-checked {
+  opacity: 0;
+}
+
+.hamburg-line-3-checked  {
+  transform: translateY(-12px) rotate(45deg);
+}
