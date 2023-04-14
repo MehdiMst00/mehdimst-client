@@ -226,8 +226,8 @@
 
 div.hamburg {
   background: #04b4e0;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -239,9 +239,9 @@ div.hamburg {
 
 .line {
   position: absolute;
-  left: 14px;
-  height: 4px;
-  width: 31px;
+  left: 10px;
+  height: 3px;
+  width: 25px;
   background: #fff;
   border-radius: 2px;
   display: block;
@@ -250,17 +250,17 @@ div.hamburg {
 }
 
 .line:nth-child(1) {
-  top: 16px;
+  top: 11px;
 }
 .line:nth-child(2) {
-  top: 28px;
+  top: 21px;
 }
 .line:nth-child(3) {
-  top: 40px;
+  top: 31px;
 }
 
 .hamburg-line-1-checked {
-  transform: translateY(12px) rotate(-45deg);
+  transform: translateY(10px) rotate(-45deg);
 }
 
 .hamburg-line-2-checked {
@@ -268,5 +268,5 @@ div.hamburg {
 }
 
 .hamburg-line-3-checked  {
-  transform: translateY(-12px) rotate(45deg);
+  transform: translateY(-10px) rotate(45deg);
 }
