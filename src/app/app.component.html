@@ -1,14 +1,10 @@
 <app-preloader></app-preloader>
 <div class="relative min-h-[80vh] w-full">
-  <app-header></app-header>
-  <div
-    class="bg-[#222] md:max-w-[calc(100%-380px)] w-full h-[100vh] right-0 absolute flex justify-center justify-items-center overflow-x-hidden"
-  >
+    <app-header></app-header>
     <div
-      class="block w-full relative"
-      [@routeAnimations]="prepareRoute(outlet)"
-    >
-      <router-outlet #outlet="outlet"></router-outlet>
+        class="bg-[#222] md:max-w-[calc(100%-380px)] w-full h-[100vh] right-0 absolute flex justify-center justify-items-center overflow-x-hidden">
+        <div class="block w-full relative" [@routeAnimations]="prepareRoute(outlet)">
+            <router-outlet #outlet="outlet"></router-outlet>
+        </div>
     </div>
-  </div>
 </div>

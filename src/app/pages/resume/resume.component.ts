@@ -1,19 +1,21 @@
-import { SkillsService } from './../../core/services/skills.service';
-import { Skill } from './../../core/dtos/skills/skill';
 import { Component, OnInit } from '@angular/core';
-import { PreloaderService } from 'src/app/core/services/preloader.service';
+import { Skill } from '../../core/dtos/skills/skill';
+import { PreloaderService } from '../../core/services/preloader.service';
+import { SkillsService } from '../../core/services/skills.service';
 
 @Component({
   selector: 'app-resume',
+  standalone: true,
+  imports: [],
   templateUrl: './resume.component.html',
 })
 export class ResumeComponent implements OnInit {
-  public hide: boolean;
+  public hide: boolean = false;
   public skills: Skill[] = [];
 
   constructor(
-    private skillsService: SkillsService,
-    private preloaderService: PreloaderService
+    private readonly skillsService: SkillsService,
+    private readonly preloaderService: PreloaderService
   ) {}
 
   ngOnInit(): void {

@@ -6,267 +6,256 @@
 @tailwind utilities;
 
 @layer components {
-  /* MaterialDesignIcons.com */
-  @font-face {
-    font-family: "Material Design Icons";
-    src: url("/assets/fonts/materialdesignicons-webfont.eot?v=7.0.96");
-    src: url("/assets/fonts/materialdesignicons-webfont.eot?#iefix&v=7.0.96")
-        format("embedded-opentype"),
-      url("/assets/fonts/materialdesignicons-webfont.woff2?v=7.0.96")
-        format("woff2"),
-      url("/assets/fonts/materialdesignicons-webfont.woff?v=7.0.96")
-        format("woff"),
-      url("/assets/fonts/materialdesignicons-webfont.ttf?v=7.0.96")
-        format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
 
-  .mdi:before,
-  .mdi-set {
-    display: inline-block;
-    font: normal normal normal 24px/1 "Material Design Icons";
-    font-size: inherit;
-    text-rendering: auto;
-    line-height: inherit;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .mdi-home-outline::before {
-    content: "\F06A1";
-  }
-
-  .mdi-account-outline::before {
-    content: "\F0013";
-  }
-
-  .mdi-school-outline::before {
-    content: "\F1180";
-  }
-
-  .mdi-briefcase-outline::before {
-    content: "\F0814";
-  }
-
-  .mdi-email-outline::before {
-    content: "\F01F0";
-  }
-
-  .mdi-phone::before {
-    content: "\F03F2";
-  }
-
-  .mdi-github::before {
-    content: "\F02A4";
-  }
-
-  .mdi-instagram::before {
-    content: "\F02FE";
-  }
-
-  .mdi-whatsapp::before {
-    content: "\F05A3";
-  }
-
-  .mdi-arrow-down-drop-circle-outline::before {
-    content: "\F004B";
-  }
-
-  .mdi-dot-net::before {
-    content: "\F0AAE";
-  }
-
-  .mdi-language-html5::before {
-    content: "\F031D";
-  }
-
-  .mdi-database-outline::before {
-    content: "\F1632";
-  }
-
-  .mdi-face-agent::before {
-    content: "\F0D70";
-  }
-
-  .mdi-phone-outline::before {
-    content: "\F0DF0";
-  }
-
-  .mdi-account-circle::before {
-    content: "\F0009";
-  }
-
-  .mdi-pencil-circle-outline::before {
-    content: "\F0776";
-  }
-
-  .mdi-message-outline::before {
-    content: "\F0365";
-  }
-
-  body {
-    @apply overflow-x-hidden;
-  }
-
-  .page-title-bg {
-    background-image: -webkit-repeating-radial-gradient(
-      center center,
-      #04b4e0,
-      #04b4e0 1px,
-      transparent 0px,
-      transparent 100%
-    );
-    background-image: -moz-repeating-radial-gradient(
-      center center,
-      #04b4e0,
-      #04b4e0 1px,
-      transparent 0px,
-      transparent 100%
-    );
-    background-image: -ms-repeating-radial-gradient(
-      center center,
-      #04b4e0,
-      #04b4e0 1px,
-      transparent 0px,
-      transparent 100%
-    );
-    background-image: radial-gradient(
-      center center,
-      #04b4e0,
-      #04b4e0 1px,
-      transparent 0px,
-      transparent 100%
-    );
-    background-image: -webkit-radial-gradient(
-      center center,
-      #04b4e0,
-      #04b4e0 1px,
-      transparent 0px,
-      transparent 100%
-    );
-    -webkit-background-size: 6px 6px;
-    -moz-background-size: 6px 6px;
-    background-size: 6px 6px;
-    z-index: 0;
-  }
-
-  .animate__animated.hinge {
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-  }
-
-  @-webkit-keyframes zoomIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: scale3d(0.4, 0.4, 0.4);
-      transform: scale3d(0.4, 0.4, 0.4);
+    /* MaterialDesignIcons.com */
+    @font-face {
+        font-family: "Material Design Icons";
+        src: url("/assets/fonts/materialdesignicons-webfont.eot?v=7.0.96");
+        src: url("/assets/fonts/materialdesignicons-webfont.eot?#iefix&v=7.0.96") format("embedded-opentype"),
+            url("/assets/fonts/materialdesignicons-webfont.woff2?v=7.0.96") format("woff2"),
+            url("/assets/fonts/materialdesignicons-webfont.woff?v=7.0.96") format("woff"),
+            url("/assets/fonts/materialdesignicons-webfont.ttf?v=7.0.96") format("truetype");
+        font-weight: normal;
+        font-style: normal;
     }
 
-    50% {
-      opacity: 0.5;
+    .mdi:before,
+    .mdi-set {
+        display: inline-block;
+        font: normal normal normal 24px/1 "Material Design Icons";
+        font-size: inherit;
+        text-rendering: auto;
+        line-height: inherit;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
-    100% {
-      opacity: 0;
-    }
-  }
-
-  @keyframes zoomIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: scale3d(0.4, 0.4, 0.4);
-      transform: scale3d(0.4, 0.4, 0.4);
+    .mdi-home-outline::before {
+        content: "\F06A1";
     }
 
-    50% {
-      opacity: 0.5;
+    .mdi-account-outline::before {
+        content: "\F0013";
     }
 
-    100% {
-      opacity: 0;
+    .mdi-school-outline::before {
+        content: "\F1180";
     }
-  }
 
-  .zoomIn {
-    -webkit-animation-name: zoomIn;
-    animation-name: zoomIn;
-  }
+    .mdi-briefcase-outline::before {
+        content: "\F0814";
+    }
 
-  .overflow-wrap-anywhere {
-    overflow-wrap: anywhere;
-  }
-}
+    .mdi-email-outline::before {
+        content: "\F01F0";
+    }
 
-::-webkit-scrollbar {
-  width: 0.4rem;
-  height: 0.4rem;
-}
+    .mdi-phone::before {
+        content: "\F03F2";
+    }
 
-::-webkit-scrollbar-track {
-  border-radius: 5px;
-  display: none;
-}
+    .mdi-github::before {
+        content: "\F02A4";
+    }
 
-::-webkit-scrollbar-thumb {
-  background-color: #04b4e0;
-  opacity: 0.7;
-  border-radius: 5px;
-}
+    .mdi-instagram::before {
+        content: "\F02FE";
+    }
 
-.swiper {
-  width: 100%;
-  margin: 50px auto;
-}
+    .mdi-whatsapp::before {
+        content: "\F05A3";
+    }
 
-.swiper-slide {
-  text-align: center;
-  line-height: 300px;
-}
+    .mdi-arrow-down-drop-circle-outline::before {
+        content: "\F004B";
+    }
 
-div.hamburg {
-  background: #04b4e0;
-  width: 45px;
-  height: 45px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 9999;
-  border-radius: 9999px;
-  top: 12px;
-  right: 12px;
-}
+    .mdi-dot-net::before {
+        content: "\F0AAE";
+    }
 
-.line {
-  position: absolute;
-  left: 10px;
-  height: 3px;
-  width: 25px;
-  background: #fff;
-  border-radius: 2px;
-  display: block;
-  transition: 0.5s;
-  transform-origin: center;
-}
+    .mdi-language-html5::before {
+        content: "\F031D";
+    }
 
-.line:nth-child(1) {
-  top: 11px;
-}
-.line:nth-child(2) {
-  top: 21px;
-}
-.line:nth-child(3) {
-  top: 31px;
-}
+    .mdi-database-outline::before {
+        content: "\F1632";
+    }
 
-.hamburg-line-1-checked {
-  transform: translateY(10px) rotate(-45deg);
-}
+    .mdi-face-agent::before {
+        content: "\F0D70";
+    }
 
-.hamburg-line-2-checked {
-  opacity: 0;
-}
+    .mdi-phone-outline::before {
+        content: "\F0DF0";
+    }
 
-.hamburg-line-3-checked  {
-  transform: translateY(-10px) rotate(45deg);
+    .mdi-account-circle::before {
+        content: "\F0009";
+    }
+
+    .mdi-pencil-circle-outline::before {
+        content: "\F0776";
+    }
+
+    .mdi-message-outline::before {
+        content: "\F0365";
+    }
+
+    body {
+        @apply overflow-x-hidden;
+    }
+
+    .page-title-bg {
+        background-image: -webkit-repeating-radial-gradient(center center,
+                #04b4e0,
+                #04b4e0 1px,
+                transparent 0px,
+                transparent 100%);
+        background-image: -moz-repeating-radial-gradient(center center,
+                #04b4e0,
+                #04b4e0 1px,
+                transparent 0px,
+                transparent 100%);
+        background-image: -ms-repeating-radial-gradient(center center,
+                #04b4e0,
+                #04b4e0 1px,
+                transparent 0px,
+                transparent 100%);
+        background-image: radial-gradient(center center,
+                #04b4e0,
+                #04b4e0 1px,
+                transparent 0px,
+                transparent 100%);
+        background-image: -webkit-radial-gradient(center center,
+                #04b4e0,
+                #04b4e0 1px,
+                transparent 0px,
+                transparent 100%);
+        -webkit-background-size: 6px 6px;
+        -moz-background-size: 6px 6px;
+        background-size: 6px 6px;
+        z-index: 0;
+    }
+
+    .animate__animated.hinge {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+    }
+
+    @-webkit-keyframes zoomIn {
+        0% {
+            opacity: 0;
+            -webkit-transform: scale3d(0.4, 0.4, 0.4);
+            transform: scale3d(0.4, 0.4, 0.4);
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes zoomIn {
+        0% {
+            opacity: 0;
+            -webkit-transform: scale3d(0.4, 0.4, 0.4);
+            transform: scale3d(0.4, 0.4, 0.4);
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .zoomIn {
+        -webkit-animation-name: zoomIn;
+        animation-name: zoomIn;
+    }
+
+    .overflow-wrap-anywhere {
+        overflow-wrap: anywhere;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0.4rem;
+        height: 0.4rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 5px;
+        display: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #04b4e0;
+        opacity: 0.7;
+        border-radius: 5px;
+    }
+
+    .swiper-container {
+        width: 100%;
+        margin: 50px auto;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        line-height: 300px;
+    }
+
+    div.hamburg {
+        background: #04b4e0;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 9999;
+        border-radius: 9999px;
+        top: 12px;
+        right: 12px;
+    }
+
+    .line {
+        position: absolute;
+        left: 10px;
+        height: 3px;
+        width: 25px;
+        background: #fff;
+        border-radius: 2px;
+        display: block;
+        transition: 0.5s;
+        transform-origin: center;
+    }
+
+    .line:nth-child(1) {
+        top: 11px;
+    }
+
+    .line:nth-child(2) {
+        top: 21px;
+    }
+
+    .line:nth-child(3) {
+        top: 31px;
+    }
+
+    .hamburg-line-1-checked {
+        transform: translateY(10px) rotate(-45deg);
+    }
+
+    .hamburg-line-2-checked {
+        opacity: 0;
+    }
+
+    .hamburg-line-3-checked {
+        transform: translateY(-10px) rotate(45deg);
+    }
 }

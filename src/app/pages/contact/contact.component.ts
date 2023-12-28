@@ -1,22 +1,30 @@
-import { ContactMe } from './../../core/dtos/contacts/contact.me';
-import { ContactService } from './../../core/services/contact.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
-import { PreloaderService } from 'src/app/core/services/preloader.service';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { ContactService } from '../../core/services/contact.service';
+import { PreloaderService } from '../../core/services/preloader.service';
+import { ContactMe } from '../../core/dtos/contacts/contact.me';
+import { HotToastService, Toast } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-contact',
+  standalone: true,
+  imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
 })
 export class ContactComponent implements OnInit {
-  public hide: boolean;
-  public contactForm: FormGroup;
+  public hide: boolean = false;
+  public contactForm!: FormGroup;
 
   constructor(
-    private contactService: ContactService,
-    private toastr: ToastrService,
-    private preloaderService: PreloaderService
+    private readonly contactService: ContactService,
+    private readonly toast: HotToastService,
+    private readonly preloaderService: PreloaderService
   ) {}
 
   ngOnInit(): void {
@@ -51,18 +59,23 @@ export class ContactComponent implements OnInit {
         this.contactForm.controls['description'].value
       );
 
+      const toastOption: any = {
+        autoClose: true,
+        position: 'bottom-right',
+        dismissible: true,
+        theme: 'snackbar',
+        duration: 3000,
+      };
+
       this.contactService
         .postContactMeMessage(contactMe)
         .subscribe((result) => {
           if (result.success) {
-            this.toastr.success(
-              'Your message successfully sent!',
-              'Success Message'
-            );
+            this.toast.success('Your message successfully sent!', toastOption);
             this.contactForm.reset();
             return;
           }
-          this.toastr.error('An error occurred', 'Error Message');
+          this.toast.error('An error occurred', toastOption);
         });
     }
   }

@@ -1,142 +1,104 @@
-<header
-  id="header"
-  class="bg-[#444] md:relative md:translate-x-0 fixed md:inline-block z-40 left-0 md:float-left float-none w-full md:max-w-[380px] max-w-none h-[100vh] text-center overflow-y-auto overflow-x-hidden pt-[50px] px-[30px] pb-[45px] opacity-100 visible transition-all ease-in-out duration-[250ms]"
-  [ngClass]="{ 'translate-x-full': !toggle && isMedium }"
->
-  <div class="header-content">
-    <div class="relative w-44 z-10 mt-0 mx-auto mb-[30px]">
-      <img
-        class="max-w-full bg-[#000732] border-none border-[#000732] rounded-full"
-        src="/assets/img/logo.png"
-        alt="Mohammad Mehdi Mostatabi"
-      />
+<header id="header"
+    class="bg-[#444] md:relative md:translate-x-0 fixed md:inline-block z-40 left-0 md:float-left float-none w-full md:max-w-[380px] max-w-none h-[100vh] text-center overflow-y-auto overflow-x-hidden pt-[50px] px-[30px] pb-[45px] opacity-100 visible transition-all ease-in-out duration-[250ms]"
+    [class]="!toggle && isMedium() ? 'translate-x-full' : ''">
+    <div class="header-content">
+        <div class="relative w-44 z-10 mt-0 mx-auto mb-[30px]">
+            <img class="max-w-full bg-[#000732] border-none border-[#000732] rounded-full" src="/assets/img/logo.png"
+                alt="Mohammad Mehdi Mostatabi" />
+        </div>
+        <div>
+            <h2 class="text-4xl mt-[5px] mx-0 mb-[5px] text-[#f5f5f5]">
+                Mohammad Mehdi Mostatabi
+            </h2>
+            <h4 class="text-lg my-[5px] mx-0 text-[#bbb]">Fullstack Developer</h4>
+        </div>
     </div>
-    <div>
-      <h2 class="text-4xl mt-[5px] mx-0 mb-[5px] text-[#f5f5f5]">
-        Mohammad Mehdi Mostatabi
-      </h2>
-      <h4 class="text-lg my-[5px] mx-0 text-[#bbb]">Fullstack Developer</h4>
-    </div>
-  </div>
 
-  <ul class="mt-[15px] mx-0">
-    <li>
-      <a
-        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 hover:text-[#09c] transition-all ease-in-out duration-300"
-        [routerLink]="'/'"
-        routerLinkActive="!opacity-100"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="onToggleClick()"
-      >
-        <span class="mdi mdi-home-outline mr-1"></span>
-        <span>Home</span>
-      </a>
-    </li>
-    <li>
-      <a
-        [routerLink]="'/about-me'"
-        routerLinkActive="!opacity-100"
-        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 hover:text-[#09c] transition-all ease-in-out duration-300"
-        (click)="onToggleClick()"
-      >
-        <span class="mdi mdi-account-outline mr-1"></span>
-        <span>About Me</span>
-      </a>
-    </li>
-    <li>
-      <a
-        [routerLink]="'/resume'"
-        routerLinkActive="!opacity-100"
-        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
-        (click)="onToggleClick()"
-      >
-        <span class="mdi mdi-school-outline mr-1"></span>
-        <span>Resume</span>
-      </a>
-    </li>
-    <li>
-      <a
-        [routerLink]="'/portfolio'"
-        routerLinkActive="!opacity-100"
-        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
-        (click)="onToggleClick()"
-      >
-        <span class="mdi mdi-briefcase-outline mr-1"></span>
-        <span>Portfolio</span>
-      </a>
-    </li>
-    <li>
-      <a
-        [routerLink]="'/contact'"
-        routerLinkActive="!opacity-100"
-        class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
-        (click)="onToggleClick()"
-      >
-        <span class="mdi mdi-email-outline mr-1"></span>
-        <span>Contact</span>
-      </a>
-    </li>
-  </ul>
-
-  <div class="block mx-14 mt-[15px]">
-    <ul class="flex flex-row flex-wrap justify-around h-auto p-0 mt-0 mx-auto">
-      <li>
-        <a
-          class="block text-white text-2xl rounded-3xl p-0 w-8 h-8 text-center opacity-90 hover:text-[#09c] transition-all ease-in-out duration-300"
-          href="tel:+989134253094"
-          target="_blank"
-        >
-          <i class="mdi mdi-phone"></i>
-        </a>
-      </li>
-      <li>
-        <a
-          class="block text-white text-2xl rounded-3xl p-0 w-8 h-8 text-center opacity-90 hover:text-[#09c] transition-all ease-in-out duration-300"
-          href="https://github.com/MehdiMst00"
-          target="_blank"
-        >
-          <i class="mdi mdi-github"></i>
-        </a>
-      </li>
-      <li>
-        <a
-          class="block text-white text-2xl rounded-3xl p-0 w-8 h-8 text-center opacity-90 hover:text-[#09c] transition-all ease-in-out duration-300"
-          href="https://www.instagram.com/mohammad.mehdi.mst/"
-          target="_blank"
-        >
-          <i class="mdi mdi-instagram"></i>
-        </a>
-      </li>
-      <li>
-        <a
-          class="block text-white text-2xl rounded-3xl p-0 w-8 h-8 text-center opacity-90 hover:text-[#09c] transition-all ease-in-out duration-300"
-          href="https://wa.me/+989134253094"
-          target="_blank"
-        >
-          <i class="mdi mdi-whatsapp"></i>
-        </a>
-      </li>
+    <ul class="mt-[15px] mx-0">
+        <li>
+            <a class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 hover:text-[#09c] transition-all ease-in-out duration-300"
+                [routerLink]="'/'" routerLinkActive="!opacity-100" [routerLinkActiveOptions]="{ exact: true }"
+                (click)="onToggleClick()">
+                <span class="mdi mdi-home-outline mr-1"></span>
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/about-me'" routerLinkActive="!opacity-100"
+                class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 hover:text-[#09c] transition-all ease-in-out duration-300"
+                (click)="onToggleClick()">
+                <span class="mdi mdi-account-outline mr-1"></span>
+                <span>About Me</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/resume'" routerLinkActive="!opacity-100"
+                class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
+                (click)="onToggleClick()">
+                <span class="mdi mdi-school-outline mr-1"></span>
+                <span>Resume</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/portfolio'" routerLinkActive="!opacity-100"
+                class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
+                (click)="onToggleClick()">
+                <span class="mdi mdi-briefcase-outline mr-1"></span>
+                <span>Portfolio</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/contact'" routerLinkActive="!opacity-100"
+                class="block text-white text-xl font-normal py-3 px-0 leading-5 opacity-70 active hover:text-[#09c] transition-all ease-in-out duration-300"
+                (click)="onToggleClick()">
+                <span class="mdi mdi-email-outline mr-1"></span>
+                <span>Contact</span>
+            </a>
+        </li>
     </ul>
-  </div>
 
-  <div class="mt-[35px]">
-    <a
-      href="https://cdn.mehdimst.com/files/CV.pdf"
-      target="_blank"
-      class="relative inline-block py-[0.6em] px-[2.1em] text-[1em] border-[2px] border-solid outline-none bg-transparent text-[#f5f5f5] border-[#f5f5f5] rounded-full transition-all duration-300 ease-in-out hover:bg-white hover:text-[#04b4e0] hover:border-white"
-      >Download CV</a
-    >
-  </div>
+    <div class="block mx-14 mt-[15px]">
+        <ul class="flex flex-row flex-wrap justify-around h-auto p-0 mt-0 mx-auto">
+            <li>
+                <a class="block text-white text-2xl rounded-3xl p-0 w-8 h-8 text-center opacity-90 hover:text-[#09c] transition-all ease-in-out duration-300"
+                    href="tel:+989134253094" target="_blank">
+                    <i class="mdi mdi-phone"></i>
+                </a>
+            </li>
+            <li>
+                <a class="block text-white text-2xl rounded-3xl p-0 w-8 h-8 text-center opacity-90 hover:text-[#09c] transition-all ease-in-out duration-300"
+                    href="https://github.com/MehdiMst00" target="_blank">
+                    <i class="mdi mdi-github"></i>
+                </a>
+            </li>
+            <li>
+                <a class="block text-white text-2xl rounded-3xl p-0 w-8 h-8 text-center opacity-90 hover:text-[#09c] transition-all ease-in-out duration-300"
+                    href="https://www.instagram.com/mohammad.mehdi.mst/" target="_blank">
+                    <i class="mdi mdi-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a class="block text-white text-2xl rounded-3xl p-0 w-8 h-8 text-center opacity-90 hover:text-[#09c] transition-all ease-in-out duration-300"
+                    href="https://wa.me/+989134253094" target="_blank">
+                    <i class="mdi mdi-whatsapp"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
 
-  <div
-    class="relative w-full pt-[5px] px-[10px] text-center mt-[45px] text-[#bbb]"
-  >
-    © 2023 All rights reserved.
-  </div>
+    <div class="mt-[35px]">
+        <a href="https://cdn.mehdimst.com/files/CV.pdf" target="_blank"
+            class="relative inline-block py-[0.6em] px-[2.1em] text-[1em] border-[2px] border-solid outline-none bg-transparent text-[#f5f5f5] border-[#f5f5f5] rounded-full transition-all duration-300 ease-in-out hover:bg-white hover:text-[#04b4e0] hover:border-white">Download
+            CV</a>
+    </div>
+
+    <div class="relative w-full pt-[5px] px-[10px] text-center mt-[45px] text-[#bbb]">
+        © 2024 All rights reserved.
+    </div>
 </header>
 
 <div class="hamburg block md:hidden" (click)="onToggleClick()">
-  <span class="line" [ngClass]="{ 'hamburg-line-1-checked': toggle }"></span>
-  <span class="line" [ngClass]="{ 'hamburg-line-2-checked': toggle }"></span>
-  <span class="line" [ngClass]="{ 'hamburg-line-3-checked': toggle }"></span>
+    <span class="line" [class]="toggle ? 'hamburg-line-1-checked' : ''"></span>
+    <span class="line" [class]="toggle ? 'hamburg-line-2-checked' : ''"></span>
+    <span class="line" [class]="toggle ? 'hamburg-line-3-checked' : ''"></span>
 </div>

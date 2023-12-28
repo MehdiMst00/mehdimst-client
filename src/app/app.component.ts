@@ -1,3 +1,8 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './shared/header/header.component';
+import { PreloaderComponent } from './shared/preloader/preloader.component';
 import {
   animate,
   animateChild,
@@ -7,14 +12,19 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Location } from '@angular/common';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: './app.component.html',
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    HeaderComponent,
+    PreloaderComponent,
+  ],
   animations: [
     // Go to down
     trigger('routeAnimations', [
@@ -73,17 +83,7 @@ import { environment } from '../environments/environment';
     ]),
   ],
 })
-export class AppComponent implements OnInit {
-  location: Location;
-
-  ngOnInit() {
-    if (environment.production) {
-      if (location.protocol === 'http:') {
-        window.location.href = location.href.replace('http', 'https');
-      }
-    }
-  }
-
+export class AppComponent {
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet &&

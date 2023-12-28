@@ -1,14 +1,24 @@
+import {
+  AfterViewInit,
+  CUSTOM_ELEMENTS_SCHEMA,
+  Component,
+  ElementRef,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Router } from '@angular/router';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { PreloaderService } from 'src/app/core/services/preloader.service';
-// import Swiper core and required modules
-import SwiperCore, { EffectFade, Autoplay } from 'swiper';
-
-// install Swiper modules
-SwiperCore.use([EffectFade, Autoplay]);
+import { PreloaderService } from '../../core/services/preloader.service';
+import { register } from 'swiper/element/bundle';
+import { isPlatformBrowser } from '@angular/common';
+register();
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [],
   templateUrl: './home.component.html',
   styles: [
     `
@@ -35,17 +45,38 @@ SwiperCore.use([EffectFade, Autoplay]);
     `,
   ],
   encapsulation: ViewEncapsulation.None,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeComponent implements OnInit {
-  public hide: boolean;
+export class HomeComponent implements OnInit, AfterViewInit {
+  public hide: boolean = false;
+  @ViewChild('swiperContainer', { static: true }) swiperContainer!: ElementRef;
 
   constructor(
-    private router: Router,
-    private preloaderService: PreloaderService
+    private readonly router: Router,
+    private readonly preloaderService: PreloaderService,
+    @Inject(PLATFORM_ID) private readonly platformId: Object
   ) {}
 
   ngOnInit(): void {
     this.hide = this.preloaderService.flag;
+  }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const swiperOptions = {
+        slidesPerView: 1,
+        autoplay: { delay: 1000, disableOnInteraction: false },
+        loop: true,
+        effect: 'flip',
+        flipEffect: {
+          slideShadows: false,
+        },
+        speed: 1000,
+      };
+      const swiperEl = this.swiperContainer.nativeElement;
+      Object.assign(swiperEl, swiperOptions);
+      swiperEl.initialize();
+    }
   }
 
   navigateToAbout() {

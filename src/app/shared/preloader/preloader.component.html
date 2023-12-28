@@ -1,13 +1,9 @@
-<div
-  *ngIf="!this.hide"
-  [@fadeOutAnimation]
-  class="flex flex-col items-center justify-center fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-[#222]"
->
-  <div
-    class="absolute top-1/2 left-1/2 text-center bg-inherit to-inherit opacity-100 transition-[opacity] -translate-x-1/2 -translate-y-1/2"
-  >
+@if(!this.hide){
+<div [@fadeOutAnimation]
+    class="flex flex-col items-center justify-center fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-[#222]">
     <div
-      class="animate-skscaleout w-[52px] h-[52px] my-[100px] mx-auto bg-[#04b4e0] rounded-full"
-    ></div>
-  </div>
+        class="absolute top-1/2 left-1/2 text-center bg-inherit to-inherit opacity-100 transition-[opacity] -translate-x-1/2 -translate-y-1/2">
+        <div class="animate-skscaleout w-[52px] h-[52px] my-[100px] mx-auto bg-[#04b4e0] rounded-full"></div>
+    </div>
 </div>
+}

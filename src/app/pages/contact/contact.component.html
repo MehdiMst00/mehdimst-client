@@ -1,137 +1,87 @@
-<section
-  class="absolute bg-[#222] text-[#d5d5d5] w-full h-full md:p-16 p-8 overflow-y-auto overflow-x-hidden font-body animate__animated animate__fadeIn {{
+<section class="absolute bg-[#222] text-[#d5d5d5] w-full h-full md:p-16 p-8 overflow-y-auto overflow-x-hidden font-body animate__animated animate__fadeIn {{
     !hide ? 'animate__delay-2s' : 'animate__delay-1s'
-  }}"
->
-  <div class="inline-block relative pr-6 pb-2 mb-6">
-    <h2
-      class="relative text-4xl z-10 text-[#eee] font-semibold after:absolute after:opacity-40 after:top-[20px] after:right-[-25px] after:content-[''] after:h-[30px] after:w-[50px] after:z-0 after:page-title-bg"
-    >
-      Contact
-      <span class="text-[#04b4e0]">Me</span>
-    </h2>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-[10px] mt-5">
-    <div
-      class="relative text-center overflow-hidden py-[20px] px-[10px] bg-[#333] shadow-none border-solid border-[1px] border-[#444] rounded-lg transition-all duration-500 ease-in-out hover:-translate-y-3"
-    >
-      <i
-        class="mdi mdi-email-outline relative text-[33px] text-[#04b4e0] z-10"
-      ></i>
-      <h4 class="overflow-auto">
-        <a
-          class="hover:text-[#09c] transition-all duration-300"
-          href="mailto:mohammadmehdi.mst@gmail.com"
-          >mohammadmehdi.mst@gmail.com</a
-        >
-      </h4>
+  }}">
+    <div class="inline-block relative pr-6 pb-2 mb-6">
+        <h2
+            class="relative text-4xl z-10 text-[#eee] font-semibold after:absolute after:opacity-40 after:top-[20px] after:right-[-25px] after:content-[''] after:h-[30px] after:w-[50px] after:z-0 after:page-title-bg">
+            Contact
+            <span class="text-[#04b4e0]">Me</span>
+        </h2>
     </div>
-    <div
-      class="relative text-center overflow-hidden py-[20px] px-[10px] bg-[#333] shadow-none border-solid border-[1px] border-[#444] rounded-lg transition-all duration-500 ease-in-out hover:-translate-y-3"
-    >
-      <i
-        class="mdi mdi-phone-outline relative text-[33px] text-[#04b4e0] z-10"
-      ></i>
-      <h4>+98 913 425 3094</h4>
-    </div>
-  </div>
 
-  <form
-    [formGroup]="contactForm"
-    (ngSubmit)="submitContactForm()"
-    autocomplete="off"
-  >
     <div class="grid grid-cols-1 md:grid-cols-2 gap-[10px] mt-5">
-      <div class="relative mb-4">
-        <div class="relative">
-          <input
-            type="text"
-            name="fullName"
-            id="fullName"
-            formControlName="fullName"
-            class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
-            placeholder=" "
-          />
-          <i
-            class="mdi mdi-account-circle absolute right-0 mr-[10px] bottom-[11px] text-4xl text-[#09c] z-20"
-          ></i>
-          <label
-            for="fullName"
-            class="absolute bg-[#222] text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-[#09c] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-            >Enter your full name ...</label
-          >
+        <div
+            class="relative text-center overflow-hidden py-[20px] px-[10px] bg-[#333] shadow-none border-solid border-[1px] border-[#444] rounded-lg transition-all duration-500 ease-in-out hover:-translate-y-3">
+            <i class="mdi mdi-email-outline relative text-[33px] text-[#04b4e0] z-10"></i>
+            <h4 class="overflow-auto">
+                <a class="hover:text-[#09c] transition-all duration-300"
+                    href="mailto:mohammadmehdi.mst@gmail.com">mohammadmehdi.mst&#64;gmail.com</a>
+            </h4>
         </div>
-      </div>
-      <div class="relative mb-4">
-        <div class="relative">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            formControlName="email"
-            class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
-            placeholder=" "
-          />
-          <i
-            class="mdi mdi-email-outline absolute right-0 mr-[10px] bottom-[11px] text-4xl text-[#09c] z-20"
-          ></i>
-          <label
-            for="email"
-            class="absolute bg-[#222] text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-[#09c] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-            >Enter your email ...</label
-          >
+        <div
+            class="relative text-center overflow-hidden py-[20px] px-[10px] bg-[#333] shadow-none border-solid border-[1px] border-[#444] rounded-lg transition-all duration-500 ease-in-out hover:-translate-y-3">
+            <i class="mdi mdi-phone-outline relative text-[33px] text-[#04b4e0] z-10"></i>
+            <h4>+98 913 425 3094</h4>
         </div>
-      </div>
-      <div class="relative mb-4 col-span-1 md:col-span-2">
-        <div class="relative">
-          <input
-            type="text"
-            name="subject"
-            id="subject"
-            formControlName="subject"
-            class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
-            placeholder=" "
-          />
-          <i
-            class="mdi mdi-pencil-circle-outline absolute right-0 mr-[10px] bottom-[11px] text-4xl text-[#09c] z-20"
-          ></i>
-          <label
-            for="subject"
-            class="absolute bg-[#222] text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-[#09c] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-            >Enter your subject ...</label
-          >
-        </div>
-      </div>
-      <div class="relative mb-4 col-span-1 md:col-span-2">
-        <div class="relative">
-          <textarea
-            type="text"
-            name="message"
-            id="message"
-            formControlName="description"
-            class="block h-52 px-2.5 pb-2.5 pt-4 pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer overflow-hidden resize-none"
-            placeholder=" "
-          ></textarea>
-          <i
-            class="mdi mdi-message-outline absolute right-0 mr-[10px] top-[13px] text-4xl text-[#09c] z-20"
-          ></i>
-          <label
-            for="message"
-            class="absolute bg-[#222] text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-[#09c] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-            >Enter your message ...</label
-          >
-        </div>
-      </div>
     </div>
-    <div class="grid mt-2">
-      <button
-        [disabled]="contactForm.invalid"
-        class="relative inline-block pt-[0.7em] pb-[0.6em] px-[2.1em] text-[1em] border-[2px] border-solid outline-none bg-transparent text-[#f5f5f5] border-[#04b4e0] rounded-full transition-all duration-300 ease-in-out hover:bg-[#04b4e0] disabled:bg-[#999]"
-        type="submit"
-      >
-        Send message
-      </button>
-    </div>
-  </form>
+
+    <form [formGroup]="contactForm" (ngSubmit)="submitContactForm()" autocomplete="off">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[10px] mt-5">
+            <div class="relative mb-4">
+                <div class="relative">
+                    <input type="text" name="fullName" id="fullName" formControlName="fullName"
+                        class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
+                        placeholder=" " />
+                    <i
+                        class="mdi mdi-account-circle absolute right-0 mr-[10px] bottom-[11px] text-4xl text-[#09c] z-20"></i>
+                    <label for="fullName"
+                        class="absolute bg-[#222] text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-[#09c] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                        your full name ...</label>
+                </div>
+            </div>
+            <div class="relative mb-4">
+                <div class="relative">
+                    <input type="email" name="email" id="email" formControlName="email"
+                        class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
+                        placeholder=" " />
+                    <i
+                        class="mdi mdi-email-outline absolute right-0 mr-[10px] bottom-[11px] text-4xl text-[#09c] z-20"></i>
+                    <label for="email"
+                        class="absolute bg-[#222] text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-[#09c] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                        your email ...</label>
+                </div>
+            </div>
+            <div class="relative mb-4 col-span-1 md:col-span-2">
+                <div class="relative">
+                    <input type="text" name="subject" id="subject" formControlName="subject"
+                        class="block h-16 px-2.5 pb-2.5 pt-[0.6rem] pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer"
+                        placeholder=" " />
+                    <i
+                        class="mdi mdi-pencil-circle-outline absolute right-0 mr-[10px] bottom-[11px] text-4xl text-[#09c] z-20"></i>
+                    <label for="subject"
+                        class="absolute bg-[#222] text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-[#09c] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                        your subject ...</label>
+                </div>
+            </div>
+            <div class="relative mb-4 col-span-1 md:col-span-2">
+                <div class="relative">
+                    <textarea type="text" name="message" id="message" formControlName="description"
+                        class="block h-52 px-2.5 pb-2.5 pt-4 pr-[46px] w-full text-sm bg-transparent border-[2px] border-solid rounded-lg appearance-none focus:outline-none focus:ring-0 border-[#999] focus:border-[#09c] peer overflow-hidden resize-none"
+                        placeholder=" "></textarea>
+                    <i
+                        class="mdi mdi-message-outline absolute right-0 mr-[10px] top-[13px] text-4xl text-[#09c] z-20"></i>
+                    <label for="message"
+                        class="absolute bg-[#222] text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-[#09c] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                        your message ...</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid mt-2">
+            <button [disabled]="contactForm.invalid"
+                class="relative inline-block pt-[0.7em] pb-[0.6em] px-[2.1em] text-[1em] border-[2px] border-solid outline-none bg-transparent text-[#f5f5f5] border-[#04b4e0] rounded-full transition-all duration-300 ease-in-out hover:bg-[#04b4e0] disabled:bg-[#999]"
+                type="submit">
+                Send message
+            </button>
+        </div>
+    </form>
 </section>
