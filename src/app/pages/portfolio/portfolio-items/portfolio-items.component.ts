@@ -1,11 +1,13 @@
-import { Portfolio } from './../../../core/dtos/portfolios/portfolio';
-import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PortfolioService } from 'src/app/core/services/portfolio.service';
+import { PortfolioService } from '../../../core/services/portfolio.service';
+import { Portfolio } from '../../../core/dtos/portfolios/portfolio';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-portfolio-items',
+  standalone: true,
+  imports: [],
   templateUrl: './portfolio-items.component.html',
   animations: [
     trigger('fadeInOutAnimation', [
@@ -38,18 +40,18 @@ import { PortfolioService } from 'src/app/core/services/portfolio.service';
   ],
 })
 export class PortfolioItemsComponent implements OnInit {
-  public category: string;
+  public category: string = '';
   public loadedData: boolean = false;
   public portfolios: Portfolio[] = [];
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
-    private portfolioService: PortfolioService
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly router: Router,
+    private readonly portfolioService: PortfolioService
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.queryParamMap.subscribe((params) => {
+    this.activatedRoute.queryParamMap.subscribe((params: any) => {
       this.loadedData = false;
       this.portfolios = [];
 

@@ -1,92 +1,45 @@
 <div class="h-[100vh] overflow-hidden flex flex-col justify-center py-9">
-  <div class="mb-10 text-center">
-    <h1 class="inline-block text-[#f5f5f5]">
-      <span
-        class="text-[2.8rem] md:text-[5rem] md2:text-[4rem] lg:text-[6rem] xl:text-[8rem] animate__animated animate__backInLeft inline-block {{
-          !hide ? 'animate__delay-2s' : ''
-        }} animate__slow"
-        >Mohammad</span
-      >
-      <div
-        class="text-[1.3rem] md:mr-0 mr-[-20px] md:text-[2.2rem] lg:text-[2.6rem] xl:text-[3.5rem] animate__animated mehdiBackInDown {{
-          !hide ? 'animate__delay-2s' : ''
-        }} animate__slow inline-block"
-      >
-        Mehdi
-      </div>
-      <div
-        class="text-[1.1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[3rem] ml-[135px] md:ml-[15.5rem] lg:ml-[18rem] xl:ml-[22rem] mt-[-15px] md:mt-[-21px] lg:mt-[-30px] xl:mt-[-45px] animate__animated animate__backInUp {{
-          !hide ? 'animate__delay-2s' : ''
-        }} animate__slow block"
-      >
-        Mostatabi
-      </div>
-    </h1>
-  </div>
-
-  <!-- <swiper
-    [slidesPerView]="1"
-    [spaceBetween]="0"
-    [navigation]="false"
-    [pagination]="true"
-    [autoplay]="true"
-    [loop]="true"
-    effect="fade"
-    [speed]="800"
-    [grabCursor]="true"
-  >
-    <ng-template swiperSlide>
-      <div class="swiper-slide">
-        <div class="text-[#aaa] text-2xl md:text-5xl text-center font-light">
-          Fullstack Developer
-        </div>
-      </div>
-    </ng-template>
-    <ng-template swiperSlide>
-      <div class="swiper-slide">
-        <div class="text-[#aaa] text-2xl md:text-5xl text-center font-light">
-          More than 2 years experience
-        </div>
-      </div>
-    </ng-template>
-
-  </swiper> -->
-
-  <swiper
-    [slidesPerView]="1"
-    [autoplay]="{ delay: 1000, disableOnInteraction: false }"
-    [loop]="true"
-    [effect]="'fade'"
-    [fadeEffect]="{ crossFade: true }"
-    [speed]="700"
-  >
-    <ng-template swiperSlide>
-      <div class="text-[#aaa] text-2xl md:text-5xl text-center font-light">
-        Fullstack Developer
-      </div>
-    </ng-template>
-    <ng-template swiperSlide>
-      <div class="text-[#aaa] text-2xl md:text-5xl text-center font-light">
-        More than 2 years experience
-      </div>
-    </ng-template>
-  </swiper>
-
-  <div
-    class="w-[100px] h-[100px] my-0 mx-auto absolute bottom-[10px] right-0 animate__animated animate__fadeInRight {{
-      !hide ? 'animate__delay-2s' : 'animate__delay-1s'
-    }}"
-    (click)="navigateToAbout()"
-  >
-    <div
-      class="w-[60px] h-[60px] bg-[#04b4e0] rounded-full absolute top-[20px] left-[20px] z-10 table before:w-[56px] before:h-[56px] before:content-[''] before:border-solid before:border-[2px] before:border-[#444] before:rounded-full before:absolute before:top-[2px] before:left-[2px]"
-    >
-      <i
-        class="mdi mdi-arrow-down-drop-circle-outline text-[30px] table-cell align-middle text-center text-[#444]"
-      ></i>
+    <div class="mb-10 text-center">
+        <h1 class="inline-block text-[#f5f5f5]">
+            <span class="text-[2.8rem] md:text-[5rem] md2:text-[4rem] lg:text-[6rem] xl:text-[8rem] animate__animated animate__backInLeft inline-block {{
+            !hide ? 'animate__delay-2s' : ''
+          }} animate__slow">Mohammad</span>
+            <div class="text-[1.3rem] md:mr-0 mr-[-20px] md:text-[2.2rem] lg:text-[2.6rem] xl:text-[3.5rem] animate__animated mehdiBackInDown {{
+            !hide ? 'animate__delay-2s' : ''
+          }} animate__slow inline-block">
+                Mehdi
+            </div>
+            <div class="text-[1.1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[3rem] ml-[135px] md:ml-[15.5rem] lg:ml-[18rem] xl:ml-[22rem] mt-[-15px] md:mt-[-21px] lg:mt-[-30px] xl:mt-[-45px] animate__animated animate__backInUp {{
+            !hide ? 'animate__delay-2s' : ''
+          }} animate__slow block">
+                Mostatabi
+            </div>
+        </h1>
     </div>
-    <div
-      class="w-[100px] h-[100px] bg-[#04b4e0] opacity-50 rounded-full absolute animate__animated hinge animate__infinite zoomIn"
-    ></div>
-  </div>
+
+    <swiper-container init="false" #swiperContainer class="swiper-container">
+        <swiper-slide>
+            <div class="text-[#aaa] text-2xl md:text-5xl text-center font-light">
+                Fullstack Developer
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div class="text-[#aaa] text-2xl md:text-5xl text-center font-light">
+                More than 3 years experience
+            </div>
+        </swiper-slide>
+    </swiper-container>
+
+    <div class="w-[100px] h-[100px] my-0 mx-auto absolute bottom-[10px] right-0 animate__animated animate__fadeInRight {{
+        !hide ? 'animate__delay-2s' : 'animate__delay-1s'
+      }}" (click)="navigateToAbout()">
+        <div
+            class="w-[60px] h-[60px] bg-[#04b4e0] rounded-full absolute top-[20px] left-[20px] z-10 table before:w-[56px] before:h-[56px] before:content-[''] before:border-solid before:border-[2px] before:border-[#444] before:rounded-full before:absolute before:top-[2px] before:left-[2px]">
+            <i
+                class="mdi mdi-arrow-down-drop-circle-outline text-[30px] table-cell align-middle text-center text-[#444]"></i>
+        </div>
+        <div
+            class="w-[100px] h-[100px] bg-[#04b4e0] opacity-50 rounded-full absolute animate__animated hinge animate__infinite zoomIn">
+        </div>
+    </div>
 </div>

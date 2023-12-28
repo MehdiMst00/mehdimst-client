@@ -1,9 +1,12 @@
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { PreloaderService } from '../../core/services/preloader.service';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { AfterViewInit, Component } from '@angular/core';
-import { PreloaderService } from 'src/app/core/services/preloader.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-preloader',
+  standalone: true,
+  imports: [],
   templateUrl: './preloader.component.html',
   animations: [
     trigger('fadeOutAnimation', [
@@ -14,15 +17,19 @@ import { PreloaderService } from 'src/app/core/services/preloader.service';
     ]),
   ],
 })
-export class PreloaderComponent implements AfterViewInit {
+export class PreloaderComponent {
   public hide: boolean = false;
 
-  constructor(private preloaderService: PreloaderService) {}
+  constructor(
+    private readonly preloaderService: PreloaderService,
+    @Inject(PLATFORM_ID) private readonly platformId: Object
+  ) {}
 
   ngAfterViewInit(): void {
+    let timeOutTime: number = isPlatformBrowser(this.platformId) ? 2000 : 0;
     setTimeout(() => {
       this.hide = true;
       this.preloaderService.flag = true;
-    }, 2000);
+    }, timeOutTime);
   }
 }
